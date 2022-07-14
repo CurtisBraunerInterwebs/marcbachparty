@@ -108,77 +108,7 @@ function init () {
         admin(false);
       }
 
-     
-      
       admin(false);
-      
-
-      //adds test data (if needed)
-      function addTestData (){
-        get(ref(db, '/blurbTest')).then((snapshot) => {
-          if (snapshot.exists()) {
-            console.log(snapshot.val());
-          } else {
-            console.log("No data available");
-            set(ref(db, '/blurbTest'),{
-              'testPage':{
-              'name':'test page',
-              'blurbs': 'contents'
-              },
-              'blurb1':{
-              'content':"TEST",
-              'toUse':true
-              },
-              'blurb2':{
-              'content':"TESt TEST",
-              'toUse':true
-              }
-            });
-          }
-        }).catch((error) => {
-          console.error(error);
-        });
-      }
-
-      
-      //removes sign in options if signed it
-      function signedIn (){
-        document.getElementById('email').style.display = 'none';
-          document.getElementById('email').value = 'signedIn@email.com';
-        document.getElementById('emailLbl').style.display = 'none';
-        document.getElementById('password').style.display = 'none';
-          document.getElementById('password').value = 'signedIn';
-        document.getElementById('passwordLbl').style.display = 'none';
-        document.getElementById('loginFormLgd').innerHTML = '';
-        document.getElementById('loginHdr').innerHTML = 'Logout';
-        document.getElementById('loginBtn').value = 'Logout';
-      }
-      //shows sign in options if signed out
-      function signedOut (){
-        document.getElementById('email').style.display = 'initial';
-          document.getElementById('email').value = '';
-        document.getElementById('emailLbl').style.display = 'initial';
-        document.getElementById('password').style.display = 'initial';
-          document.getElementById('password').value = '';
-        document.getElementById('passwordLbl').style.display = 'initial';
-        document.getElementById('loginFormLgd').innerHTML = 'Login';
-        document.getElementById('loginHdr').innerHTML = 'Login';
-        document.getElementById('loginBtn').value = 'Login';
-      }
-
-      //shows admin options if user is Curtis 
-      function admin(admin) {
-        if (admin == true) {
-          console.log('admin logged in');
-          document.getElementById('adminNav').style = 'display:inline';
-        } else if (admin == false) {
-          console.log('no admin logged in');
-          document.getElementById('adminNav').style = 'display:none';
-          document.getElementById('admin').style = 'display:none';
-        }
-      }
-      //fills in active blurbs on site
-      
 
       function makeElements (newEl, id, inHTML, name, clss, rand, randVal, rand2, rand2Val) {
         if (id != undefined) {newEl.setAttribute('id', id); }
@@ -188,8 +118,6 @@ function init () {
         if (rand != undefined) {newEl.setAttribute(rand, randVal); }
         if (rand != undefined) {newEl.setAttribute(rand2, rand2Val); }
       }
-
-      
 
       
 

@@ -11,4 +11,19 @@
         body, #message { margin-top: 0; background: white; box-shadow: none; }
         body { border-top: 16px solid #ffa100; }
       }
-   
+   #map {
+    background-image: url("/public/mapAnnotated.png");
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+   }
+
+   section {
+    display: none;
+   }
+
+   section:target{
+    display: block;
+   }
+
